@@ -1,0 +1,39 @@
+id,class,subclass,subclass2,start year,influenced by,additional search terms
+,ancient greek,,,-900,,
+,ancient india,,,-800,,gupta
+,,,,,,
+,roman,,,-500,ancient greek,ancient roman
+,byzantine,,,330,roman,
+,islamic,malmuk,,1250,,
+,islamic,ottoman,,1299,"malmuk, byzantine",
+,islamic,mughal,,1556,"ancient indian, islamic",
+,medieval,romanesque,,500,roman,
+,medieval,gothic,,1150,romanesque,
+,medieval,tudor,,1485,gothic,
+,medieval scandinavian,,,800,,
+,renaissance,italian renaissance,,1400,gothic,renaissance
+,renaissance,northern renaissance,,1400,gothic,
+,baroque,italian baroque,,1584,renaissance,baroque
+,baroque,french baroque,,1610,renaissance,
+,baroque,english baroque,,1666,renaissance,queen anne
+,baroque,spanish baroque,,1667,renaissance,
+,baroque,rococo,,1730,french baroque,"roccoco, late baroque"
+,palladian,,,1650,"ancient greek, roman",
+,neoclassical,georgian,,1714,palladian,
+,neoclassical,neoclassical,,1750,palladian,
+,neoclassical,Beuax-arts,,1830,neoclassical,
+,neoclassical,victorian,,1837,georgian,
+,modern,art deco,,1901,Beuax-arts,
+,colonial,french colonial,,1604,,
+,colonial,spanish colonial,,1600,,
+,colonial,portugese colonial,,1470,,
+,colonial,american colonial,dutch colonial,1600,,
+,colonial,american colonial,german colonial,1600,,
+,colonial,american colonial,mid atlantic colonial,1600,,
+,colonial,american colonial,colonial georgian,1600,,
+,,,,,,
+,japanese,asuka,,538,,"nara period, asuka period"
+,japanese,heian,,794,,heian period
+,japanese,kamakura,,1185,,muromachi period
+,japanese,momoyama,,1568,,momoyama period
+,japanese,edo,,1603,,edo period
