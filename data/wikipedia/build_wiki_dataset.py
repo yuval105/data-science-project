@@ -1,7 +1,9 @@
 import bs4
 import requests
+from multiprocessing import Pool
+import re
 
-WIKIPEDIA = 'https://en.wikipedia.org/wiki/'
+WIKIPEDIA = 'https://en.wikipedia.org'
 
 def text_to_year(text:str):
     if text.isnumeric():
@@ -14,6 +16,37 @@ def text_to_year(text:str):
 
     return -1
 
+ctr = 0
+
+def parse_period_architecture_page(page):
+    global ctr
+    year, link = page
+    link = WIKIPEDIA + link
+    r = requests.get(link)
+    bs = bs4.BeautifulSoup(r.content, 'html.parser')
+    span = bs.find('span', {'id': re.compile('^Buildings')})
+    ul  = span.find_next('ul') # this ul contains all the buildings
+    current_year = year
+    buildings = []
+    for li in ul.find_all('li'):
+        nums = re.search('[0-9]+', str(li))
+        if nums is not None:
+            new_year = int(re.search('[0-9]+', str(li)).group())
+            if new_year != 1 and new_year > current_year:
+                current_year = new_year
+
+        link = li.find('a')
+        if link:
+            ctr += 1
+            print(ctr)
+            buildings.append((year, link['href']))
+
+    return buildings
+
+def parse_all_period(period_pages, number_of_workers=None):
+    with Pool(number_of_workers) as p:
+        return p.map(parse_period_architecture_page, period_pages)
+
 
 def parse_timeline_of_architecture():
     '''
@@ -21,7 +54,7 @@ def parse_timeline_of_architecture():
         1. a list of (link, year) for pages like https://en.wikipedia.org/wiki/1560s_in_architecture
     '''
 
-    link = WIKIPEDIA + 'Timeline_of_architecture'
+    link = WIKIPEDIA + '/wiki/Timeline_of_architecture'
     r = requests.get(link)
     bs = bs4.BeautifulSoup(r.content, 'html.parser')
     all_periods = bs.find_all('ul')
@@ -44,6 +77,6 @@ def parse_timeline_of_architecture():
 
 if __name__ == '__main__':
     r = parse_timeline_of_architecture()
-    for i in r:
-        print(i)
+    buildings = parse_all_period(r)
+    pass
 
