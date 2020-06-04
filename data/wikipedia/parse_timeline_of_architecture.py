@@ -16,10 +16,7 @@ def text_to_year(text:str):
 
     return -1
 
-ctr = 0
-
 def parse_period_architecture_page(page):
-    global ctr
     year, link = page
     link = WIKIPEDIA + link
     r = requests.get(link)
@@ -37,8 +34,6 @@ def parse_period_architecture_page(page):
 
         link = li.find('a')
         if link:
-            ctr += 1
-            print(ctr)
             buildings.append((year, link['href']))
 
     return buildings
