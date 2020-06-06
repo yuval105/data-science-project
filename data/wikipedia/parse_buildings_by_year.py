@@ -42,8 +42,8 @@ def search_thread(queue:Queue, pages_queue:Queue):
 
         [pages_queue.put((year, i)) for i in pages]
 
-def main(first_year, last_year):
-    pool = multiprocessing.Pool(processes=1)
+def main(first_year, last_year, threads=None):
+    pool = multiprocessing.Pool(processes=threads)
     m = multiprocessing.Manager()
     q = m.Queue()
     pages_queue = m.Queue()
@@ -52,9 +52,8 @@ def main(first_year, last_year):
     return pages_queue
 
 
-
 if __name__ == '__main__':
-    pages = main(1001, 1015)
+    pages = main(1001, 1007)
     while not pages.empty():
         print(pages.get(block=True))
 

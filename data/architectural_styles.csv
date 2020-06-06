@@ -1,11 +1,11 @@
 id,class,subclass,subclass2,start year,influenced by,additional search terms
-1,ancient greek,,,-900,,
+1,ancient greek,,,-900,,greek
 2,ancient india,,,-800,,gupta
 ,,,,,,
 3,roman,,,-500,ancient greek,ancient roman
 4,byzantine,,,330,roman,
-5,islamic,malmuk,,1250,,
-6,islamic,ottoman,,1299,"malmuk, byzantine",
+5,islamic,mamluk,,1250,,
+6,islamic,ottoman,,1299,"mamluk, byzantine",
 7,islamic,mughal,,1556,"ancient indian, islamic",
 8,medieval,romanesque,,500,roman,
 9,medieval,gothic,,1150,romanesque,
@@ -32,8 +32,8 @@ id,class,subclass,subclass2,start year,influenced by,additional search terms
 30,colonial,american colonial,mid atlantic colonial,1600,,
 31,colonial,american colonial,colonial georgian,1600,,
 ,,,,,,
-32,japanese,asuka,,538,,"nara period, asuka period"
-33,japanese,heian,,794,,heian period
-34,japanese,kamakura,,1185,,muromachi period
-35,japanese,momoyama,,1568,,momoyama period
-36,japanese,edo,,1603,,edo period
+32,japanese,asuka,,538,,"nara, asuka"
+33,japanese,heian,,794,,heian
+34,japanese,kamakura,,1185,,muromachi
+35,japanese,momoyama,,1568,,momoyama
+36,japanese,edo,,1603,,edo
