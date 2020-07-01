@@ -11,6 +11,7 @@ from bokeh.models import GeoJSONDataSource, ColumnDataSource, Range1d
 from bokeh.transform import factor_cmap
 from bokeh.models.tools import HoverTool
 import bokeh
+from bokeh.resources import INLINE
 
 
 def plot_points(df, figsize=(15, 15), column='class'):
@@ -64,5 +65,5 @@ def plot_interactive_points(df, column='class'):
                        source=points_source, legend_group=column)
     p.add_tools(
         HoverTool(tooltips=[("Architecture", f"@{column}")], renderers=[circles]))
-    output_notebook()
+    output_notebook(INLINE)
     show(p)
